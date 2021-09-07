@@ -1,0 +1,39 @@
+<script>
+
+	function reverseDigits(num)
+	{
+		let rev = 0;
+		while (num > 0)
+		{
+			rev = rev * 10 + num % 10;
+			num = parseInt(num / 10, 10);
+		}
+		return rev;
+	}
+
+
+	function square(num)
+	{
+		return (num * num);
+	}
+
+
+	function checkAdamNumber(num)
+	{
+		
+		let a = square(num);
+		let b = square(reverseDigits(num));
+
+		if (a == reverseDigits(b))
+		return true;
+		return false;
+	}
+	
+	let num = 12;
+		
+	if (checkAdamNumber(num))
+	document.write("Adam Number");
+	else
+	document.write("Not a Adam Number");
+	
+</script>
